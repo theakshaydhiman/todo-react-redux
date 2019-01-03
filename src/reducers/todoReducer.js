@@ -14,7 +14,7 @@ const initialState = {
       id: 2,
       title: 'My second todo',
       description: 'Do not do this do that instead',
-      datetime: '2019-01-05T13:00',
+      datetime: '2019-05-05T13:00',
     },
     {
       id: 3,

@@ -45,8 +45,9 @@ class AddForm extends React.Component {
 
   render() {
     const {
-      toIndex, toEdit, title, description, datetime,
+      toIndex, title, description, datetime,
     } = this.state;
+    const { toEdit } = this.props;
     if (toIndex) {
       return (<Redirect to="/" />);
     }
@@ -65,21 +66,17 @@ class AddForm extends React.Component {
                   <input id="title" type="text" onChange={this.handleChange} value={title} required />
                 </label>
               </div>
-              <div className="row">
-                <div className="input-field col s12">
-                  <label className="active" htmlFor="description">
-                    Description
-                    <textarea id="description" className="materialize-textarea" onChange={this.handleChange} value={description} required />
-                  </label>
-                </div>
+              <div className="input-field col s12">
+                <label className="active" htmlFor="description">
+                  Description
+                  <textarea id="description" className="materialize-textarea" onChange={this.handleChange} value={description} required />
+                </label>
               </div>
-              <div className="row">
-                <div className="input-field col s12">
-                  <label className="active" htmlFor="datetime">
-                    Reminder - optional
-                    <input id="datetime" type="datetime-local" onChange={this.handleChange} value={datetime} />
-                  </label>
-                </div>
+              <div className="input-field col s12">
+                <label className="active" htmlFor="datetime">
+                  Reminder - optional
+                  <input id="datetime" type="datetime-local" onChange={this.handleChange} value={datetime} />
+                </label>
               </div>
               <div className="col">
                 <button className="btn waves-effect waves-light blue" type="submit">
