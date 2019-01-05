@@ -8,10 +8,10 @@ const formatDate = (date) => {
   let minutes = d.getMinutes();
   const ampm = hours >= 12 ? 'PM' : 'AM';
   hours %= 12;
-  hours = hours === 12;
-  minutes = minutes < 10 ? `0 ${minutes}` : minutes;
-  const strTime = `${hours} : ${minutes} ${ampm}`;
-  return `${d.getDate()} / ${(d.getMonth() + 1)} / ${d.getFullYear()} ${strTime}`;
+  hours = hours || 12;
+  minutes = minutes < 10 ? `0${minutes}` : minutes;
+  const strTime = `${hours}:${minutes} ${ampm}`;
+  return `${d.getDate()}/${(d.getMonth() + 1)}/${d.getFullYear()} ${strTime}`;
 };
 
 const ListTodo = ({ todos, deleteTodo, editTodo }) => {
@@ -30,7 +30,7 @@ const ListTodo = ({ todos, deleteTodo, editTodo }) => {
             </span>
           </>
         ) : null}
-        <span role="button" tabIndex={0} className="secondary-content" title="Delete" onClick={() => { deleteTodo(todo.id); }} onKeyDown={() => { deleteTodo(todo.id); }}>
+        <span role="button" tabIndex={0} className="secondary-content" title="Delete" onClick={() => { deleteTodo(todo.id); }} onKeyDown={() => { deleteTodo(todo.id); }} style={{ cursor: 'pointer' }}>
           <i className="material-icons red-text text-darken-2">delete</i>
         </span>
         <Link to="/add" className="secondary-content" title="Edit" onClick={() => { editTodo(todo); }}><i className="material-icons blue-text">edit</i></Link>

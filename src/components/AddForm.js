@@ -61,22 +61,16 @@ class AddForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="input-field col s12">
-                <label className="active" htmlFor="title">
-                  Title
-                  <input id="title" type="text" onChange={this.handleChange} value={title} required />
-                </label>
+                <label className="active" htmlFor="title">Title</label>
+                <input id="title" type="text" onChange={this.handleChange} value={title} required />
               </div>
               <div className="input-field col s12">
-                <label className="active" htmlFor="description">
-                  Description
-                  <textarea id="description" className="materialize-textarea" onChange={this.handleChange} value={description} required />
-                </label>
+                <label className="active" htmlFor="description">Description</label>
+                <textarea id="description" className="materialize-textarea" onChange={this.handleChange} value={description} required />
               </div>
               <div className="input-field col s12">
-                <label className="active" htmlFor="datetime">
-                  Reminder - optional
-                  <input id="datetime" type="datetime-local" onChange={this.handleChange} value={datetime} />
-                </label>
+                <label className="active" htmlFor="datetime">Reminder - optional</label>
+                <input id="datetime" type="datetime-local" onChange={this.handleChange} value={datetime} />
               </div>
               <div className="col">
                 <button className="btn waves-effect waves-light blue" type="submit">
