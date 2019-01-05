@@ -106,8 +106,8 @@ class App extends Component {
               path="/add"
               render={() => (
                 <AddForm
-                  addTodo={this.addTodo}
-                  editTodo={this.editTodo}
+                  addTodoItem={this.addTodo}
+                  editTodoItem={this.editTodo}
                 />
               )}
             />

@@ -24,13 +24,13 @@ class AddForm extends React.Component {
   handleChange = e => this.setState({ [e.target.id]: e.target.value });
 
   handleSubmit = (e) => {
-    const { editTodo, addTodo, toEdit } = this.props;
+    const { editTodoItem, addTodoItem, toEdit } = this.props;
     e.preventDefault();
     // Form submission to add or edit based on the state editTodo.
     if (toEdit.id) {
-      editTodo(toEdit, this.state);
+      editTodoItem(toEdit, this.state);
     } else {
-      addTodo(this.state);
+      addTodoItem(this.state);
     }
     this.clearState();
   }
@@ -91,8 +91,8 @@ class AddForm extends React.Component {
 }
 
 AddForm.propTypes = {
-  addTodo: PropTypes.func.isRequired,
-  editTodo: PropTypes.func.isRequired,
+  addTodoItem: PropTypes.func.isRequired,
+  editTodoItem: PropTypes.func.isRequired,
   setTodo: PropTypes.func.isRequired,
   toEdit: PropTypes.objectOf(PropTypes.string).isRequired,
 };
